@@ -1,19 +1,27 @@
 # VideoProgressBarTool-Windows
 Video Progressbar Tool for windows
 
+## 工具下载链接
+
+该工具使用Python开发，使用了PIL和PyQt库，目前为**Beta1版本**，支持图形界面配置大部分参数，支持windows平台。
+
+目前工具尚在测试阶段，源码暂不放出，仅提供工具beta1版本的下载链接：
+
+点击[这里](https://gitee.com/zhengmingpei/VideoProgressBarTool-Windows/attach_files/573221/download/VideoProgressBarTool-Windows-x64-beta1.zip)即可下载。
+
 ## 视频进度条生成工具
 
 本工具是制作视频进度条的辅助小工具。
 
 使用该工具配合AdobePremiere、Shotcut等常见视频编辑软件可以轻松实现下图所示的进度条效果：
 
-![demo1](demo1.jpg)
+![demo1](docs/demo1.jpg)
 
 ### 功能介绍
 
 工具的核心功能是：根据自定义配置，快速制作可以用在AdobePremiere、Shotcut等常见视频编辑器中使用的PNG图片。图片包括前景、背景和文本。
 
-该工具使用Python开发，使用了PIL和PyQt库，目前为Beta1版本，支持图形界面配置大部分参数，支持windows平台。
+### 注意
 
 **默认字体为微软雅黑，暂时无法更改，字体所在目录应为`c:\\windows\\fonts\\msyh.ttc`，路径不对的请自行放置到该目录。**
 
@@ -31,9 +39,11 @@ mainWindow6.ui         # 工具的界面布局文件，没错，是第六个版�
 
 运行`VideoProgressBarTool-Windows-x64-beta1.exe`后界面如下：
 
-![ui1](ui1.jpg)
+![ui1](docs/ui1.jpg)
 
-进行参数配置后点击**生成图片按钮**即可预览进度条效果，生成无误以后可以点击**存储图片按钮**指定目录存储图片。
+进行参数配置后点击**生成图片按钮**即可预览进度条效果，生成无误以后可以点击**存储图片按钮**指定目录存储图片,运行效果如下图：
+
+![ui1](docs/ui2.jpg)
 
 正常运行后，若指定文件名为`hello`，则将会生成符合要求的PNG图片：
 
@@ -46,9 +56,14 @@ mainWindow6.ui         # 工具的界面布局文件，没错，是第六个版�
 
 ## 应用工具制作视频进度条
 
-本工具生成的PNG图片中，01、02和03图片需要分别拖入视频编辑软件中，并各自占用一条视频轨道，并叠放在你自己的素材视频轨道上方。
+详情见本人的[B站视频介绍](https://space.bilibili.com/32918983)
+
+在视频素材完成剪辑后，使用本工具生成符合素材结构的PNG图片，并将01、02和03图片分别拖入视频编辑软件中，并使三个图片各自占用一条视频轨道，叠放在你自己的视频素材轨道上方。
 
 叠放示例如图：
 
-![demo2](demo2.jpg)
+![demo2](docs/demo2.jpg)
 
+然后对02图片所在的轨道加入诸如矩形裁切之类的滤镜操作，并在视频开始和结束各做1个关键帧，需要保证02图片从视频开始到结束，匀速向右移除，从而露出03图片轨道的进度条。
+
+最后输出视频即可。
