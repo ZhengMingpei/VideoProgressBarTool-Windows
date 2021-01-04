@@ -7,7 +7,7 @@ Video Progressbar Tool for windows
 
 目前工具尚在测试阶段，源码暂不放出，仅提供工具beta1版本的下载链接：
 
-点击[这里](https://gitee.com/zhengmingpei/VideoProgressBarTool-Windows/attach_files/573221/download/VideoProgressBarTool-Windows-x64-beta1.zip)即可下载。
+点击[这里](https://github.com/ZhengMingpei/VideoProgressBarTool-Windows/releases/tag/beta1))即可下载。
 
 ## 视频进度条生成工具
 
