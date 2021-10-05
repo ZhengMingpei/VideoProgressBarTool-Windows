@@ -3,9 +3,20 @@ Video Progressbar Tool for windows
 
 ## 工具下载链接
 
-该工具使用Python开发，使用了PIL和PyQt库，目前为**Beta1版本**，支持图形界面配置大部分参数，支持windows平台。
+该工具使用Python开发，命令行版本使用了PIL库，图形版本使用了PIL和PyQt库，目前为**Beta1版本**。
 
-目前工具尚在测试阶段，源码暂不放出，仅提供工具beta1版本的下载链接：
+* 命令行版本支持json文件配置所有参数，放出版本支持windows平台。
+* 图形版本支持图形界面配置大部分参数，支持windows平台。
+
+目前工具尚在测试阶段，源码暂不放出，仅提供工具beta1版本的下载链接。
+
+最新的命令行版本：
+
+[github下载链接](https://github.com/ZhengMingpei/VideoProgressBarTool-Windows/releases/download/cli-beta1/VideoProgressBarTool-Windows-x64-cli-beta1.zip)
+
+[国内推荐gitee下载链接](https://gitee.com/zhengmingpei/VideoProgressBarTool-Windows/attach_files/845597/download/VideoProgressBarTool-Windows-x64-cli-beta1.zip)
+
+旧的图形界面版本：
 
 点击[这里](https://github.com/ZhengMingpei/VideoProgressBarTool-Windows/releases/tag/beta1)即可下载。
 
@@ -21,11 +32,72 @@ Video Progressbar Tool for windows
 
 工具的核心功能是：根据自定义配置，快速制作可以用在AdobePremiere、Shotcut等常见视频编辑器中使用的PNG图片。图片包括前景、背景和文本。
 
-### 注意
+### 命令行新版本使用方法
+
+图形界面版本过于繁琐，所以重新制作了更好用（**关键是可定制化更强**）的命令行版本。
+
+现在只需要编辑配置文件比如`userVideoStruct.json`，然后直接将配置文件拖到`VideoProgressBarTool-Windows-x64-cli-beta1.exe`上，即可生成含png图片的文件夹，文件夹名为当前时间，文件夹内包括以下文件：
+
+```sh
+01-text.png  02-foreground.png  03-background.png  userVideoStruct.json
+```
+
+`userVideoStruct.json`的配置内容非常明显，`timeLine`定义视频结构，`video`定义视频分辨率，`processbar`定义进度条，`text`定义进度条上的文字（`cutcolor`定义分割条颜色）。
+
+颜色的表示比如`#ffffff00`，前面的`ffffff`表示颜色，最后的`00`表示透明度（alpha值）。
+
+```json
+{
+    "timeLine":
+    [
+        {
+            "partId":1,
+            "startTime":0,
+            "endTime":15,
+            "text":"开头"
+        },
+        {
+            "partId":2,
+            "endTime":70,
+            "text":"章节1"
+        },
+        {
+            "partId":3,
+            "endTime":85,
+            "text":"章节2"
+        },
+        {
+            "partId":4,
+            "endTime":100,
+            "text":"结尾"
+        }
+    ],
+    "video":
+    {
+        "width":1920,
+        "height":1080
+    },
+    "processbar":
+    {
+        "height":54,
+        "background":"#0fffff77",
+        "foreground":"#00000077"
+    },
+    "text":
+    {
+        "font":"c:\\windows\\fonts\\msyh.ttc",
+        "size":48,
+        "color":"#ffffffee",
+        "cutcolor":"#ffffff77"
+    }
+}
+```
+
+### 图形界面版使用方法
+
+2021.10.5更新，建议优先使用上述命令行版本。
 
 **默认字体为微软雅黑，暂时无法更改，字体所在目录应为`c:\\windows\\fonts\\msyh.ttc`，路径不对的请自行放置到该目录。**
-
-### 工具使用方法
 
 解压后，会得到以下文件：
 
