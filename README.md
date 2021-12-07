@@ -8,7 +8,7 @@ Video Progressbar Tool for windows
 * 命令行版本支持json文件配置所有参数，放出版本支持windows平台。
 * 图形版本支持图形界面配置大部分参数，支持windows平台。
 
-目前工具尚在测试阶段，源码暂不放出，仅提供工具beta1版本的下载链接。
+目前命令行版的源码已放出，即`main.py`。
 
 最新的命令行版本：
 
